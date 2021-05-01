@@ -1,8 +1,8 @@
 # GKE cluster
 resource "google_container_cluster" "primary" {
-  name     = "${var.project_id}-gke"
+  name        = "${var.project_id}-gke"
   description = "test cluster for demo purposes"
-  location = var.region
+  location    = var.region
 
   remove_default_node_pool = true
   initial_node_count       = 1
@@ -19,19 +19,19 @@ resource "google_container_cluster" "primary" {
     }
   }
   # enable_binary_authorization = true
-#   addons_config {
-#       network_policy_config  {
-#         disabled = false
-#       }
-#   }
-    # database_encryption {
-    #   state = "ENCRYPTED"
-    #   key_name = ""
-    # }
-    # istio_config {
-    #     disabled = false
-    # }
-    #service_account = ""
+  #   addons_config {
+  #       network_policy_config  {
+  #         disabled = false
+  #       }
+  #   }
+  # database_encryption {
+  #   state = "ENCRYPTED"
+  #   key_name = ""
+  # }
+  # istio_config {
+  #     disabled = false
+  # }
+  #service_account = ""
 }
 
 # Separately Managed Node Pool

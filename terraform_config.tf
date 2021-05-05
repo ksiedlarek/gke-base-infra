@@ -6,4 +6,11 @@ terraform {
     }
   }
   required_version = "~> 0.15"
+  backend "remote" {
+    organization = "gcp-demo-ksiedlarek"
+
+    workspaces {
+      name = "gke-base-infra"
+    }
+  }
 }

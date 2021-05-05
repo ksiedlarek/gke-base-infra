@@ -1,11 +1,16 @@
 variable "project_id" {
-  description = "project id"
+  description = "Project id"
   type        = string
 }
 
 variable "region" {
-  description = "region"
+  description = "GCP region"
   type        = string
+}
+
+variable "zone" {
+  description = "GCP zone"
+  type = string
 }
 
 variable "gke_username" {

@@ -4,3 +4,4 @@
 .terraform*
 .DS_Store
 terraform.tfvars
+terraform.auto.tfvars

@@ -1,6 +1,10 @@
-# Purpose
+# GKE - base infrastructure
+
+## Purpose
 
 This repository is needed for sample app deployments in GCP, that can be found here: [gke-sample-app-deployment](https://github.com/ksiedlarek/gke-sample-app-deployments).
+
+## Setup
 
 All of the code is based on official [HashiCorp tutorial](https://learn.hashicorp.com/tutorials/terraform/gke).
 You can use it to deploy: vpc & subnet, GKE cluster, GCR.

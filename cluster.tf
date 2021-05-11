@@ -2,6 +2,7 @@
 resource "google_container_cluster" "primary" {
   name        = "${var.project_id}-gke"
   description = "test cluster for demo purposes"
+  # uncomment if you want resources to be regional and not zonal (and comment out zone below)
   #location    = var.region
   location = var.zone
 
@@ -19,6 +20,7 @@ resource "google_container_cluster" "primary" {
       issue_client_certificate = false
     }
   }
+  # you can privide more detailed configuration if needed:
   # enable_binary_authorization = true
   #   addons_config {
   #       network_policy_config  {
@@ -38,6 +40,7 @@ resource "google_container_cluster" "primary" {
 # Separately Managed Node Pool
 resource "google_container_node_pool" "primary_nodes" {
   name       = "${google_container_cluster.primary.name}-node-pool"
+  # uncomment if you want resources to be regional and not zonal (and comment out zone below)
   #location   = var.region
   location = var.zone
 
@@ -55,7 +58,6 @@ resource "google_container_node_pool" "primary_nodes" {
       env = var.project_id
     }
 
-    # preemptible  = true
     machine_type = "n1-standard-1"
     tags         = ["gke-node", "${var.project_id}-gke"]
     metadata = {

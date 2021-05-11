@@ -13,6 +13,12 @@ variable "zone" {
   type = string
 }
 
+variable "gcr_location" {
+  description = "GCR location"
+  type = string
+  default = "EU"
+}
+
 variable "gke_username" {
   default     = "admin"
   description = "GKE username"

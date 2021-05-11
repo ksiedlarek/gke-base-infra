@@ -12,9 +12,9 @@ To do so:
 3. Install [Google Cloud SDK](https://cloud.google.com/sdk/docs/install)
 4. Log in to your GCP project from command line ([gcloud init](https://cloud.google.com/sdk/gcloud/reference/init))
 5. [Optional] Create terraform.auto.tfvars - add variable values for region, zone, project_id and gke_password (you will be prompted to provide them if you won't create this file).
-6. Change backend configuration in terraform_config.tf - use your own Terraform Organisation and Workspace - if you don't want to use [Terraform Cloud](https://www.terraform.io/cloud) - change backend type to local.
+6. Change backend configuration in terraform_config.tf - use your own Terraform Organisation and Workspace - if you don't want to use [Terraform Cloud](https://www.terraform.io/cloud) - change backend type to [local](https://www.terraform.io/docs/language/settings/backends/local.html). (if you do so, you will also have to amend code within gke-sample-app-deployment repository to get information about GKE clusters from different location than shared remote backend)
 
-If you will use Terraform Cloud, log in prior to running below commands with: 
+If you will use Terraform Cloud, open your terminal and log in:
 
 `terraform login`
 

@@ -12,14 +12,6 @@ resource "google_container_cluster" "primary" {
   network    = google_compute_network.vpc.name
   subnetwork = google_compute_subnetwork.subnet.name
 
-  master_auth {
-    username = var.gke_username
-    password = var.gke_password
-
-    client_certificate_config {
-      issue_client_certificate = false
-    }
-  }
   # you can privide more detailed configuration if needed:
   # enable_binary_authorization = true
   #   addons_config {
